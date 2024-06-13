@@ -11,7 +11,7 @@ nav:
     # - Use Case: fiori_app/useCaseApp.md
 
 theme:
-  name: material
+  name: jekyll-theme-minimal
   features:
     - navigation.tabs
     - navigation.sections
