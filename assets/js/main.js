@@ -1,9 +1,3 @@
-/*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var	$window = $(window),
@@ -65,8 +59,10 @@
 
 			}
 
-	// Navbar.
+	// NavScrolling
 	$(document).ready(function() {
+		console.log("Document ready");
+	
 		// Function to show/hide resume-specific elements
 		function toggleResumeElements(show) {
 			var $resumeElements = $('#resume-nav-and-download');
@@ -77,65 +73,29 @@
 			}
 		}
 	
-		// Handle navigation clicks
-		$('#navbar ul li a').on('click', function(e) {
+		// Handle navigation clicks for scrolling-nav
+		$('.scrolling-nav ul li a').on('click', function(e) {
+			console.log("Link clicked");
 			e.preventDefault();
 			var targetSection = $(this).data('target');
+			console.log("Target:", targetSection);
 			var $targetContent = $('#' + targetSection);
 			
 			if ($targetContent.length) {
-				// Hide all sections and show the target section
+				// Hide all sections
 				$('.resume-section').hide();
+				
+				// Show only the target section
 				$targetContent.show();
 				
-				// Scroll to the target section
+				console.log("Scrolling to:", $targetContent.offset().top);
 				$('html, body').animate({
-					scrollTop: $targetContent.offset().top
+					scrollTop: $targetContent.offset().top - 50 // Adjust this value as needed
 				}, 1000);
 			}
 		});
 	
-		// Show the first section by default when the resume page loads
-		$('#experience').show();
-	
-		// Handle hashchange events
-		$(window).on('hashchange', function() {
-			var hash = location.hash.replace('#', '');
-			if (hash === 'resume') {
-				toggleResumeElements(true);
-			} else {
-				toggleResumeElements(false);
-			}
-		});
-	
-		// Initial check on page load
-		if (location.hash === '#resume') {
-			toggleResumeElements(true);
-		} else {
-			toggleResumeElements(false);
-		}
-	});
-
-
-	$(document).ready(function() {
-		console.log("Document ready");
-		$('#navbar ul li a').on('click', function(e) {
-			console.log("Link clicked");
-			e.preventDefault();
-			var targetText = $(this).data('target');
-			console.log("Target:", targetText);
-			var targetSection = $('article[data-target="' + targetText + '"]');
-			console.log("Target section found:", targetSection.length > 0);
-			
-			if (targetSection.length) {
-				console.log("Scrolling to:", targetSection.offset().top);
-				$('html, body').animate({
-					scrollTop: targetSection.offset().top
-				}, 1000);
-			}
-		});
-	});
-
+		
 	// Main.
 		var	delay = 325,
 			locked = false;
@@ -433,28 +393,66 @@
 
 			});
 
-			function toggleDetails(expId) {
-				const moreDetails = document.getElementById('more-' + expId);
-				const toggleBtn = document.querySelector(`#exp-${expId} .toggle-details-btn`);
-				
-				moreDetails.classList.toggle('active');
-				
-				if (moreDetails.classList.contains('active')) {
-					toggleBtn.textContent = 'Show Less';
-				} else {
-					toggleBtn.textContent = 'Show More';
-				}
+
+		// Sections.
+		// Show the first section by default when the resume page loads
+		$('#experience').show();
+	
+		// Handle hashchange events
+		$(window).on('hashchange', function() {
+			var hash = location.hash.replace('#', '');
+			if (hash === 'resume') {
+				toggleResumeElements(true);
+			} else {
+				toggleResumeElements(false);
 			}
+		});
+	
+		// Initial check on page load
+		if (location.hash === '#resume') {
+			toggleResumeElements(true);
+		} else {
+			toggleResumeElements(false);
+		}
+	
+		// Add click events to toggle buttons
+		$('.toggle-details-btn').on('click', function(e) {
+			e.preventDefault();
+			var expId = $(this).closest('.experience-item').attr('id').split('-')[1];
+			toggleDetails(expId);
+		});
+	});
+	
+	// Function to toggle details (outside document.ready to be globally accessible)
+	function toggleDetails(expId) {
+		console.log("Toggling details for exp-" + expId);
+		const moreDetails = document.getElementById('more-' + expId);
+		const toggleBtn = document.querySelector(`#exp-${expId} .toggle-details-btn`);
+		
+		if (moreDetails && toggleBtn) {
+			moreDetails.classList.toggle('active');
 			
-			// Add this to your existing document ready function
-			$(document).ready(function() {
-				// Add click events to toggle buttons
-				$('.toggle-details-btn').on('click', function(e) {
-					e.preventDefault();
-					var expId = $(this).closest('.experience-item').attr('id').split('-')[1];
-					toggleDetails(expId);
-				});
-			});
+			if (moreDetails.classList.contains('active')) {
+				toggleBtn.textContent = 'Show Less';
+				moreDetails.style.display = 'block';
+				// Trigger reflow to ensure transition works
+				void moreDetails.offsetWidth;
+				moreDetails.style.maxHeight = moreDetails.scrollHeight + 'px';
+			} else {
+				toggleBtn.textContent = 'Show More';
+				moreDetails.style.maxHeight = '0';
+				// Wait for transition to finish before hiding
+				setTimeout(() => {
+					if (!moreDetails.classList.contains('active')) {
+						moreDetails.style.display = 'none';
+					}
+				}, 500); // This should match the transition duration
+			}
+		} else {
+			console.error("Could not find moreDetails or toggleBtn for exp-" + expId);
+		}
+	}
+
 
 		// Scroll restoration.
 		// This prevents the page from scrolling back to the top on a hashchange.
