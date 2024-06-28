@@ -394,6 +394,18 @@
 			});
 
 
+			document.addEventListener('DOMContentLoaded', function() {
+				const articles = document.querySelectorAll('.project-article');
+				articles.forEach(article => {
+					const bgImage = article.getAttribute('data-bg-image');
+					if (bgImage) {
+						article.style.backgroundImage = `url('${bgImage}')`;
+					}
+				});
+			});
+			
+
+
 		// Sections.
 		// Show the first section by default when the resume page loads
 		$('#experience').show();

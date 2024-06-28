@@ -1,11 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600|Merriweather");
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
-/*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -198,24 +194,25 @@ input, select, textarea {
 			margin: 0 0 2rem 0;
 		}
 
+
 	h1 {
-		font-size: 3.25rem;
+		font-size: 4.25rem;
 		line-height: 1.3;
 		letter-spacing: 0.5rem;
 	}
 
 	h2 {
-		font-size: 1.5rem;
+		font-size: 2.5rem;
 		line-height: 1.4;
 		letter-spacing: 0.5rem;
 	}
 
 	h3 {
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 
 	h4 {
-		font-size: 0.8rem;
+		font-size: 1rem;
 	}
 
 	h5 {
@@ -719,6 +716,22 @@ input, select, textarea {
 			}
 
 		}
+
+		.profile.image {
+			display: block;
+			width: 200px; /* Adjust size as needed */
+			height: 200px; /* Should be the same as width for a perfect circle */
+			margin: 0 auto 2rem; /* Centers the image and adds some bottom margin */
+			overflow: hidden;
+			border-radius: 50%; /* This makes the container circular */
+		}
+		
+		.profile.image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover; /* This ensures the image covers the area without distortion */
+		}
+		
 
 /* List */
 
@@ -1640,6 +1653,39 @@ input, select, textarea {
 			}
 
 		}
+/* Article Img*/
+
+.project-article {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.project-article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(27, 31, 34, 0.85); /* Matches your existing background color */
+    z-index: 1;
+}
+
+.project-article > * {
+    position: relative;
+    z-index: 2;
+}
+
+.project-article {
+    color: #ffffff; /* Ensure text is visible on dark backgrounds */
+}
+
+.project-article h2 a {
+    color: #ffffff;
+}
+
 
 /* Intro: About Me */
 
@@ -1665,10 +1711,15 @@ input, select, textarea {
 	margin-bottom: 1em;
 }
 
+#intro h2.major {
+    text-align: center !important;
+    width: 100%;
+}
+
 
 /* Badges */
 
-.skills-badges {
+.tiles {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1690,7 +1741,7 @@ input, select, textarea {
     border: 1px solid rgba(128, 128, 128, 0.5); 
 }
 
-.skills-badges h3 {
+.tiles h3 {
     width: 100%;
     text-align: center;
     margin-top: 1rem;
@@ -1703,7 +1754,7 @@ input, select, textarea {
 	padding-bottom: .5rem;
 }
 
-.skills-badges h3::after {
+.tiles h3::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1725,7 +1776,7 @@ input, select, textarea {
 	display: -ms-flex;
 	display: flex;
 	margin-top: 2rem;
-	margin-bottom: 1rem;
+	margin-bottom: 0rem;
 	list-style: none;
 	padding-left: 0;
 	border: solid 1px #ffffff;
@@ -1776,6 +1827,18 @@ input, select, textarea {
 	border-left: 0;
 }
 
+.resume-section {
+    padding-top: 2rem; 
+}
+
+/*
+#resume-content h3.major {
+    text-align: center;
+    width: 100%;
+}
+*/
+
+
 .more-details {
     max-height: 0;
     overflow: hidden;
@@ -1797,8 +1860,6 @@ input, select, textarea {
 .experience-item {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 2rem;
-	border-bottom: 2px solid rgba(255, 255, 255, .5);
 }
 
 .experience-item:last-child {
@@ -1824,7 +1885,7 @@ input, select, textarea {
 
 .toggle-details-btn {
 	display: inline-block;
-	margin-bottom: 1.5rem;
+	margin-bottom: .5rem;
 }
 
 .more-details .left-column,
