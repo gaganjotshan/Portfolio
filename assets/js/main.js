@@ -90,7 +90,7 @@
 				
 				console.log("Scrolling to:", $targetContent.offset().top);
 				$('html, body').animate({
-					scrollTop: $targetContent.offset().top - 50 // Adjust this value as needed
+					scrollTop: $targetContent.offset().top - 50 
 				}, 1000);
 			}
 		});
