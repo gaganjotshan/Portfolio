@@ -65,7 +65,7 @@
 	
 		// Function to show/hide resume-specific elements
 		function toggleResumeElements(show) {
-			var $resumeElements = $('#resume-nav-and-download');
+			var $resumeElements = $('#resume-header');
 			if (show) {
 				$resumeElements.removeClass('hidden');
 			} else {

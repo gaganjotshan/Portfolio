@@ -1762,24 +1762,43 @@ input, select, textarea {
 
 /* Resume */
 
-
 #resume-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
+    text-align: center;
 }
+
+.resume-download {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.resume-download .button {
+    display: inline-block;
+}
+
+#resume nav {
+    width: 100%;
+}
+
 
 #resume nav ul {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 2rem 0 0;
     list-style: none;
     padding: 0;
     border: solid 1px #ffffff;
     border-radius: 4px;
+    width: 100%;
 }
 
 #resume nav ul li {
+    flex: 1;
+    display: flex;
     border-left: solid 1px #ffffff;
 }
 
@@ -1788,15 +1807,16 @@ input, select, textarea {
 }
 
 #resume nav ul li a {
-    display: block;
-    min-width: 7.5rem;
-    height: 2.75rem;
-    line-height: 2.75rem;
-    padding: 0 1.25rem 0 1.45rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    min-height: 2.75rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-size: 0.8rem;
-    transition: background-color 0.3s ease;
 }
 
 #resume nav ul li a:hover,
@@ -1913,7 +1933,8 @@ input, select, textarea {
     #resume nav ul {
         flex-direction: column;
         min-width: 10rem;
-        max-width: 100%;
+        max-width: 50%;
+        margin: 0 auto; 
     }
 
     #resume nav ul li {
