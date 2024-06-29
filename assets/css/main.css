@@ -1964,6 +1964,15 @@ input, select, textarea {
     }
 }
 
+/* Contact */
+
+.email-display {
+    display: none;
+    float: right;
+    margin-left: 10px;
+}
+
+
 
 /* Footer */
 

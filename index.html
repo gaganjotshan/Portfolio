@@ -60,7 +60,7 @@
 					<p>I’m skilled in Python, TensorFlow, data visualization, and front-end development. I thrive on
 						tackling tough problems and am always eager to learn something new.</p>
 					<p>Take a look around and explore my work. And feel free to check out my <a
-							href="#resume">resume!</a>.</p>
+							href="#resume">resume!</a></p>
 					<p>When I’m not working, you’ll find me bouldering, gardening, experimenting in the kitchen, or
 						learning something new. My goal is to contribute effectively to meaningful projects that make a
 						positive impact. Feel free to explore my portfolio and discover how I bring my skills and
@@ -94,7 +94,6 @@
 						<span class="badge">Git & Version Control</span>
 						<span class="badge">Kubernetes</span>
 						<span class="badge">Cloud Platforms (AWS)</span>
-						<span class="badge">Project Management</span>
 
 						<h3>Languages</h3>
 						<span class="badge">English (C1)</span>
@@ -433,7 +432,7 @@
 				<p>Welcome to my collection of notebooks and projects!<br />
 					Explore topics like data analytics, machine learning, MLOps, deep learning, NLP, and more.<br />
 					Each project is linked to its GitHub repository, so you can download and experiment with the
-					code.<br />
+					code if you like.<br />
 					I'm always open to suggestions, correlations, improvements, or even a friendly roast.<br />
 					From data cleaning and visualization to deep-dive analysis, my work showcases a wide range of
 					skills.<br />
@@ -521,19 +520,19 @@
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Contact</h2>
-				<form method="post" action="#">
+				<form id="contact-form" action="https://formspree.io/f/myzgygwq" method="POST">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
+							<input type="text" name="name" id="name" autocomplete="name" required />
 						</div>
 						<div class="field half">
 							<label for="email">Email</label>
-							<input type="text" name="email" id="email" />
+							<input type="email" name="email" id="email" autocomplete="email" required />
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
+							<textarea name="message" id="message" rows="4" required></textarea>
 						</div>
 					</div>
 					<ul class="actions">
@@ -541,13 +540,23 @@
 						<li><input type="reset" value="Reset" /></li>
 					</ul>
 				</form>
+				
+				
 				<ul class="icons">
 					<li><a href="https://www.linkedin.com/in/gaganjotshan/" class="icon brands fa-linkedin"><span
 								class="label">Linkedin</span></a></li>
 					<li><a href="https://github.com/gaganjotshan" class="icon brands fa-github"><span
 								class="label">GitHub</span></a></li>
-					<li><a href="mailto:gagan.shan7@gmail.com" class="icon solid fa-envelope"><span
-								class="label">Email</span></a></li>
+					<li>
+						<a href="mailto:gagan.shan7@gmail.com" id="emailLink" class="icon solid fa-envelope">
+							<span class="label">Email</span>
+						</a>
+						<span id="emailText" class="email-display" style="display: none;">gagan.shan7@gmail.com</span>
+					</li>
+
+
+
+
 
 				</ul>
 			</article>
@@ -822,12 +831,56 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/main.js"></script>
 
 	<script>
-		document.getElementById('emailLink').addEventListener('click', function(e) {
-			e.preventDefault();
-			window.location.href = 'mailto:' + 'gagan.shan7' + '@' + 'gmail.com';
-		});
+		document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                form.reset();
+            } else {
+                alert('Oops! There was a problem submitting your form');
+            }
+        }).catch(error => {
+            alert('Oops! There was a problem submitting your form');
+        });
+    });
+});
+
 		</script>
 		
+
+	<!--
+		<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var emailLink = document.getElementById('emailLink');
+
+			if (emailLink) {
+				emailLink.addEventListener('click', function (e) {
+					// No need to prevent default action
+					// The default action of a mailto: link is to open the email client
+
+					// Optionally, you can still try to force open the email client
+					window.location.href = 'mailto:gagan.shan7@gmail.com';
+				});
+			}
+		});
+
+	</script>
+	-->
+
+
+
+
+
+
 
 </body>
 
