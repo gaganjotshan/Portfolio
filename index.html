@@ -540,8 +540,8 @@
 						<li><input type="reset" value="Reset" /></li>
 					</ul>
 				</form>
-				
-				
+
+
 				<ul class="icons">
 					<li><a href="https://www.linkedin.com/in/gaganjotshan/" class="icon brands fa-linkedin"><span
 								class="label">Linkedin</span></a></li>
@@ -553,10 +553,6 @@
 						</a>
 						<span id="emailText" class="email-display" style="display: none;">gagan.shan7@gmail.com</span>
 					</li>
-
-
-
-
 
 				</ul>
 			</article>
@@ -831,31 +827,36 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/main.js"></script>
 
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                alert('Thank you for your message! I\'ll get back to you soon.');
-                form.reset();
-            } else {
-                alert('Oops! There was a problem submitting your form');
-            }
-        }).catch(error => {
-            alert('Oops! There was a problem submitting your form');
-        });
-    });
-});
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.getElementById('contact-form');
+			if (form) {
+				form.addEventListener('submit', function (e) {
+					e.preventDefault();
+					fetch(form.action, {
+						method: 'POST',
+						body: new FormData(form),
+						headers: {
+							'Accept': 'application/json'
+						}
+					}).then(response => {
+						if (response.ok) {
+							alert('Thank you for your message! I\'ll get back to you soon.');
+							form.reset();
+						} else {
+							throw new Error('Form submission failed: ' + response.statusText);
+						}
+					}).catch(error => {
+						console.error('Error:', error);
+						alert('Oops! There was a problem submitting your form: please directly email at gagan.shan7@gmail.com. ' + error.message);
+					});
+				});
+			} else {
+				console.error('Contact form not found');
+			}
+		});
+	</script>
 
-		</script>
-		
+
 
 	<!--
 		<script>
