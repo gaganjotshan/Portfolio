@@ -1,0 +1,18 @@
+{
+    "welcome": "Bonjour et Bienvenue !",
+    "intro": "Bienvenue sur mon portfolio ! Je suis Gaganjot Shan, un passionné de Data Science avec un intérêt particulier pour le Machine Learning et l'Analyse de Données.",
+    "passion": "J'aime transformer les données en informations exploitables et créer des solutions qui font la différence.",
+    "skills": "Je suis compétent en Python, TensorFlow, visualisation de données et développement front-end. J'aime relever des défis complexes et je suis toujours avide d'apprendre de nouvelles choses.",
+    "explore": "Jetez un coup d'œil et explorez mon travail. N'hésitez pas à consulter mon CV !",
+    "personal": "Quand je ne travaille pas, vous me trouverez en train de faire de l'escalade de bloc, du jardinage, d'expérimenter en cuisine ou d'apprendre quelque chose de nouveau.",
+    "goal": "Mon objectif est de contribuer efficacement à des projets significatifs qui ont un impact positif. N'hésitez pas à explorer mon portfolio et à découvrir comment j'apporte mes compétences et ma passion à chaque projet.",
+    "resume": "CV",
+    "projects": "Projets",
+    "contact": "Contact",
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "reset": "Réinitialiser"
+  }
+  
