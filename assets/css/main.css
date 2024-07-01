@@ -873,26 +873,29 @@ input[type="radio"]+label:before {
 	}
 
 }
-
 .profile.image {
-	display: block;
-	width: 200px;
-	/* Adjust size as needed */
-	height: 200px;
-	/* Should be the same as width for a perfect circle */
-	margin: 0 auto 2rem;
-	/* Centers the image and adds some bottom margin */
-	overflow: hidden;
-	border-radius: 50%;
-	/* This makes the container circular */
+    display: block;
+    width: 210px;  /* Increased from 200px */
+    height: 210px; /* Increased from 200px */
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
 }
 
 .profile.image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	/* This ensures the image covers the area without distortion */
+    width: 110%;  /* Increased from 100% to zoom in */
+    height: 110%; /* Increased from 100% to zoom in */
+    object-fit: cover;
+    transform: scale(1.1); /* Additional zoom */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.profile.image:hover img {
+    transform: scale(1.2); /* Further zoom on hover */
+}
+
+
 
 /* Grid images*/
 .certificate-grid {
