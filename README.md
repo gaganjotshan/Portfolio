@@ -1,5 +1,7 @@
 ## Computer Science Engineer
 
+
+
 Data Analyst and Machine Learning Engineer with a track record of developing innovative algorithms and models to drive business insights and decision-making. Skilled in Python, data analysis, and visualization. Committed to ongoing learning and delivering high-quality results.
 
 ---
@@ -9,6 +11,7 @@ Data Analyst and Machine Learning Engineer with a track record of developing inn
 - **Location**: Antibes, France  
 - **Email**: [gagan.shan7@gmail.com](mailto:gagan.shan7@gmail.com)
 - **Phone**: +33 766356099
+- **Portfolio**: [Gaganjot SHAN](https://gaganjotshan.github.io/Portfolio/#)
 - **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/gaganjotshan)
 - **GitLab**: [GitLab](https://gitlab.eurecom.fr/)
 
@@ -31,9 +34,6 @@ Data Analyst and Machine Learning Engineer with a track record of developing inn
 - Boosted scalability by containerizing the project with Docker and deploying it on Kubernetes (Kyma) clusters.
 - Installed and configured NGINX as a reverse proxy server to handle incoming API requests and distribute them to backend microservices.
 - Implemented OAuth 2.0 authorization framework to secure API endpoints and control access to resources.
-- Set up an Authorization Server (e.g., using Auth0 or custom implementation) to issue JWT tokens and validate client credentials.
-- Configured NGINX to validate OAuth tokens and enforce access policies based on scopes and roles defined in JWT claims.
-- Increased KPI anomaly detection accuracy by 5.42% using machine learning-based synthetic data generation techniques, ensuring privacy and security of original data.
 
 ### Software Engineer Intern
 **Diesel Loco Modernisation Works, Indian Railways (June 2018 - August 2018), IN, Patiala**
