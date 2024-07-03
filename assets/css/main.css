@@ -2177,18 +2177,30 @@ Lanuage section
 	max-height: 1000px;
 	/* Adjust as needed */
 	opacity: 1;
+	
+}
+
+.more-details h4 {
+    padding-top: 0; /* Remove top padding for h4 in more-details */
+    margin-bottom: 5px; /* Further reduced margin */
 }
 
 .details-columns,
 .experience-main-content {
 	display: flex;
 	justify-content: space-between;
+	margin-top: -7px;
 }
 
 .experience-item {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 2rem;
+}
+
+.experience-item h4 {
+    padding-top: 20px;
+	margin-bottom: 10px;
 }
 
 .experience-item:last-child {
@@ -2217,7 +2229,12 @@ Lanuage section
 
 .toggle-details-btn {
 	display: inline-block;
-	margin-bottom: .5rem;
+	margin-bottom: 1.5rem;
+}
+
+.more-details > h4 {
+    text-align: center;
+    padding-top: .5rem;
 }
 
 .more-details .left-column,
