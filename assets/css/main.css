@@ -884,15 +884,15 @@ input[type="radio"]+label:before {
 }
 
 .profile.image img {
-    width: 110%;  /* Increased from 100% to zoom in */
-    height: 110%; /* Increased from 100% to zoom in */
-    object-fit: cover;
-    transform: scale(1.1); /* Additional zoom */
+    width: 100%;  /* Ensure the image fits within the container */
+    height: 100%; /* Ensure the image fits within the container */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    object-position: top; /* Ensures the top of the image is always visible */
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .profile.image:hover img {
-    transform: scale(1.2); /* Further zoom on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
 
