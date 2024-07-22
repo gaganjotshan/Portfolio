@@ -2305,6 +2305,126 @@ Lanuage section
 
 /* Projects */
 
+/* Project Grid Container */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem; /* Reduced gap from 2rem to 1rem */
+    padding: 1rem; /* Reduced padding from 2rem to 1rem */
+    background-color: rgba(27, 31, 34, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Project Item */
+.project-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+	padding: 0; /* Remove padding from the project item */
+}
+
+.project-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(27, 31, 34, 0.85);
+    z-index: 1;
+}
+
+.project-item > * {
+    position: relative;
+    z-index: 2;
+	margin: 0; /* Remove default margins */
+}
+
+/* Image Container */
+.project-item .image-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image Styles */
+.project-item .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the full image is displayed */
+    object-position: center; /* Centers the image */
+    cursor: pointer; /* Add cursor pointer to indicate clickability */
+}
+
+.project-item h2 {
+    margin: 0.5rem 0; /* Add margin below the heading */
+    font-size: 1.2rem;
+    padding: 0; /* Remove any extra padding */
+}
+
+.project-item h2 a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.project-item p {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Actions Section */
+.project-item .actions {
+    text-align: center;
+    margin-top: 0.5rem; /* Add space above the button */
+    padding: 0 0.5rem; /* Optional: Add horizontal padding */
+}
+
+.project-item .button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.75rem;
+	margin-top: 1rem; /* Add space above the button */
+	margin-bottom: 1rem;
+}
+
+.project-item .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 736px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
 
 /* Contact */
 

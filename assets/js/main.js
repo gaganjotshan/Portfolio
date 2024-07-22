@@ -475,6 +475,18 @@
 		}
 	}
 
+	document.addEventListener('DOMContentLoaded', function() {
+		// Get all images inside project items
+		var images = document.querySelectorAll('.project-item .image-container img');
+	
+		// Add click event to each image
+		images.forEach(function(img) {
+			img.onclick = function() {
+				window.open(this.src, '_blank'); // Open the image in a new tab/window
+			}
+		});
+	});
+
 
 	// Scroll restoration.
 	// This prevents the page from scrolling back to the top on a hashchange.
