@@ -81,9 +81,11 @@ Data Analyst and Machine Learning Engineer with a track record of developing inn
 ---
 
 ## Certifications
-
-- [BCG Data Science Job Simulation, Forage (2024)](https://example.com) 
-- [Power BI Essential Training, LinkedIn Learning (2024)](https://example.com) 
+- [JPMorgan Cybersecurity Job Simulation, Forage (2024)](https://github.com/gaganjotshan/JPMorgan-Cybersecurity/blob/main/Cybersecurity_JPMorganChase_certificate.pdf) 
+- [PwC Switzerland Data Analyst Job Simulation, Forage (2024)](https://github.com/gaganjotshan/PwC-PowerBI/blob/main/PwC-Switzerland_certificate.pdf) 
+- [BCG Data Science Job Simulation, Forage (2024)](https://github.com/gaganjotshan/BCG-CustomerChurn/blob/main/BCD-Data-Science-Certificate.pdf) 
+- [Accenture Data Analytics Job Simulation, Forage (2024)](https://github.com/gaganjotshan/Accenture-Data_Analytics/blob/main/AccentureNorthAmerica-DataAnalyst_certificate.pdf) 
+- [Power BI Essential Training, LinkedIn Learning (2024)](https://www.linkedin.com/learning/certificates/2d71a16a7e817888d88719658d47b1ae8d7468f65eefa0f7a564cedc84ed3182) 
 
 ---
 
