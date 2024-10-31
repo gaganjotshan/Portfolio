@@ -32,7 +32,7 @@ Data Analyst and Machine Learning Engineer with a track record of developing inn
 **SAP Labs (March 2023 - August 2023), FR, Mougins**
 - Developed an SAP Fiori (UI5) application integrating ledger technologies and REST APIs, significantly enhancing user experience for next-gen analytics security.
 - Boosted scalability by containerizing the project with Docker and deploying it on Kubernetes (Kyma) clusters.
-- Installed and configured NGINX as a reverse proxy server to handle incoming API requests and distribute them to backend microservices.
+- Implimented reverse proxy for load balancing and distribute API calls to backend microservices.
 - Implemented OAuth 2.0 authorization framework to secure API endpoints and control access to resources.
 
 ### Software Engineer Intern
