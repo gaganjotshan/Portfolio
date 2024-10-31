@@ -1600,9 +1600,10 @@ body.is-preload #bg:before {
 #header .content {
 	border-style: solid;
 	border-color: #ffffff;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
 	max-width: 100%;
+	
 }
 
 #header .content .inner {
@@ -1614,8 +1615,8 @@ body.is-preload #bg:before {
 	-webkit-transition-delay: 0.25s;
 	-ms-transition-delay: 0.25s;
 	transition-delay: 0.25s;
-	padding: 3rem 2rem;
-	max-height: 40rem;
+	padding: 0.5rem 0.5rem 0; 
+    max-height: 30rem; 
 	overflow: hidden;
 }
 
@@ -1624,7 +1625,6 @@ body.is-preload #bg:before {
 }
 
 #header .content p {
-
 	letter-spacing: 0.2rem;
 	font-size: 1rem;
 	line-height: 2;
